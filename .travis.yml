@@ -1,0 +1,9 @@
+stages:
+  - format
+jobs:
+  include:
+    - stage: format
+      language: go
+      # Other installation scripts
+      script:
+        - ./gofmt.sh
