@@ -1,5 +1,13 @@
 package main
 
+/*
+catsanddog
+cat,dog,and,cats,sand
+
+pineapplepenapple
+pine,applepen,apple,pen,pineapple
+*/
+
 import (
 	"fmt"
 	"strings"
@@ -26,9 +34,8 @@ func combination(str string, prev string, phraseList []string) {
 			}
 			if newLen == len(phraseList[i]) {
 				combination(str[1:], "", phraseList)
-			} else {
-				combination(str[1:], newStr, phraseList)
 			}
+			combination(str[1:], newStr, phraseList)
 		}
 	}
 	//todo: 如果没有一个phrase与newStr相等
@@ -43,8 +50,3 @@ func main() {
 	combination(str, "", phraseList)
 	fmt.Println(count)
 }
-
-/*
-catsanddog
-cat,dog,and,cats,sand
-*/
